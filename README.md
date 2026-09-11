@@ -15,9 +15,3 @@ My personal portfolio, built to showcase my projects and experience as a Fronten
 - Dark/light theme toggle with persistence
 - Scroll-spy navigation
 - Animated sections (Framer Motion)
-
-## Running locally
-\`\`\`bash
-npm install
-npm run dev
-\`\`\`
