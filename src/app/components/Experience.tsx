@@ -1,9 +1,64 @@
-import React from 'react'
+import { experience } from "../data/portfolio";
+import { MdLocationOn } from "react-icons/md";
+import type { ReactNode } from "react";
+
+const parseHighlight = (text: string): ReactNode[] => {
+  const parts = text.split(/(<hl>.*?<\/hl>)/g);
+  return parts.map((part, index) => {
+    const match = part.match(/^<hl>(.*?)<\/hl>$/);
+    if (match) {
+      return (
+        <span key={index} className="text-accent font-medium">
+          {match[1]}
+        </span>
+      );
+    }
+    return <span key={index}>{part}</span>;
+  });
+};
 
 const Experience = () => {
   return (
-    <div>Experience</div>
-  )
-}
+    <section id="experience" className="py-10">
+      <h2 className="text-foreground font-bold text-lg tracking-wide mb-8">EXPERIENCE</h2>
 
-export default Experience
+      <div className="flex flex-col">
+        {experience.map((job, index) => (
+          <div key={job.company} className="flex gap-5">
+            <div className="flex flex-col items-center">
+              <span className="w-3 h-3 rounded-full bg-accent shrink-0 mt-1.5"></span>
+              {index < experience.length - 1 && <span className="w-px flex-1 bg-border mt-1"></span>}
+            </div>
+
+            <div className={`flex-1 ${index < experience.length - 1 ? "pb-10" : ""}`}>
+              <p className="text-foreground-muted text-sm mb-1">{job.period}</p>
+
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
+                <div>
+                  <span className="text-foreground text-lg font-semibold">{job.role}</span>
+                  <br />
+                  <span className="text-accent font-medium ">{job.company}</span>
+                </div>
+                <div className="flex items-center gap-1 text-foreground-muted text-sm shrink-0">
+                  <MdLocationOn size={18} />
+                  {job.location}
+                </div>
+              </div>
+
+              <ul className="flex flex-col gap-1.5">
+                {job.highlights.map((point, pointIndex) => (
+                  <li key={pointIndex} className="text-foreground-muted text-sm flex gap-2">
+                    <span className="text-accent shrink-0">•</span>
+                    <span>{parseHighlight(point)}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Experience;

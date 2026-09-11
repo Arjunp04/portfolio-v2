@@ -17,7 +17,7 @@
   --background: #1a1a1a;
   --surface: #292828;
   --foreground: #ffffff;
-  --foreground-muted: #4a4a4a;
+  --foreground-muted: #a1a1a1;
   --accent: #d96a2b;
   --accent-hover: #b95220;
   --border: #2e2e2e;
@@ -37,18 +37,13 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  user-select: none;
+  -webkit-user-select: none; /* Safari ke liye */
 }
-
-/* .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  } */

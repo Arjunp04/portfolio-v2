@@ -2,6 +2,27 @@ import projectOne from "../assets/nutsiqMockup.png";
 import projectTwo from "../assets/blogifyhub.png";
 import projectThree from "../assets/fancyfinds.png";
 import projectFour from "../assets/mockup.png";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaJsSquare,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+  FaBootstrap,
+} from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiTailwindcss,
+  SiRedux,
+  SiExpress,
+  SiPostman,
+  SiTypescript,
+  SiMongodb,
+  SiFigma,
+  SiAxios,
+} from "react-icons/si";
 
 export const navLinks = [
   { label: "Home", href: "#home" },
@@ -18,8 +39,8 @@ export const stats = [
 
 export interface Tech {
   name: string;
-  bg: string;
-  text?: string;
+  icon: React.ComponentType<{ className?: string }>;
+  iconColor: string; // Dynamic icon color strictly for light/dark blending
 }
 
 export interface TechCategory {
@@ -33,41 +54,50 @@ export const technologies: TechCategory[] = [
     id: "01",
     category: "Core Web",
     techs: [
-      { name: "HTML5", bg: "bg-[#e34c26]", text: "text-white" },
-      { name: "CSS3", bg: "bg-[#264de4]", text: "text-white" },
-      { name: "JavaScript", bg: "bg-[#f7df1e]", text: "text-black" },
+      { name: "HTML5", icon: FaHtml5, iconColor: "text-[#e34c26]" },
+      { name: "CSS3", icon: FaCss3Alt, iconColor: "text-[#264de4]" },
+      {
+        name: "JavaScript",
+        icon: FaJsSquare,
+        iconColor: "text-[#f7df1e]",
+      },
     ],
   },
   {
     id: "02",
     category: "Frontend",
     techs: [
-      { name: "React", bg: "bg-[#20232a]", text: "text-[#61dafb]" },
-      { name: "Next.js", bg: "bg-black", text: "text-white" },
-      { name: "TypeScript", bg: "bg-[#3178c6]", text: "text-white" },
-      { name: "Tailwind CSS", bg: "bg-[#0ea5e9]", text: "text-white" },
-      { name: "Redux", bg: "bg-[#764abc]", text: "text-white" },
-      { name: "Bootsrap", bg: "bg-[#764abc]", text: "text-white" },
+      { name: "React", icon: FaReact, iconColor: "text-[#61dafb]" },
+      { name: "Next.js", icon: SiNextdotjs, iconColor: "text-foreground" }, // Inverted color for dark mode support
+      { name: "TypeScript", icon: SiTypescript, iconColor: "text-[#3178c6]" },
+      {
+        name: "Tailwind CSS",
+        icon: SiTailwindcss,
+        iconColor: "text-[#0ea5e9]",
+      },
+      { name: "Redux", icon: SiRedux, iconColor: "text-[#764abc]" },
+      { name: "Bootstrap", icon: FaBootstrap, iconColor: "text-[#764abc]" }, // Fixed spelling anomaly
     ],
   },
   {
     id: "03",
     category: "Backend",
     techs: [
-      { name: "Node.js", bg: "bg-[#339933]", text: "text-white" },
-      { name: "Express.js", bg: "bg-[#404040]", text: "text-white" },
-      { name: "MongoDB", bg: "bg-[#4db33d]", text: "text-white" },
+      { name: "Node.js", icon: FaNodeJs, iconColor: "text-[#339933]" },
+      { name: "Express.js", icon: SiExpress, iconColor: "text-foreground" },
+      { name: "MongoDB", icon: SiMongodb, iconColor: "text-[#4db33d]" },
+
     ],
   },
   {
     id: "04",
     category: "Tools",
     techs: [
-      { name: "Git", bg: "bg-[#f05032]", text: "text-white" },
-      { name: "GitHub", bg: "bg-[#333]", text: "text-white" },
-      { name: "Figma", bg: "bg-[#f24e1e]", text: "text-white" },
-      { name: "Postman", bg: "bg-[#ef5b25]", text: "text-white" },
-      { name: "Axios", bg: "bg-[#5a29e4]", text: "text-white" },
+      { name: "Git", icon: FaGitAlt, iconColor: "text-[#f05032]" },
+      { name: "GitHub", icon: FaGithub, iconColor: "text-foreground" },
+      { name: "Figma", icon: SiFigma, iconColor: "text-[#f24e1e]" },
+      { name: "Postman", icon: SiPostman, iconColor: "text-[#ef5b25]" },
+      { name: "Axios", icon: SiAxios, iconColor: "text-[#5a29e4]" },
     ],
   },
 ];
