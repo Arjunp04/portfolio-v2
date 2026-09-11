@@ -20,7 +20,6 @@ import {
   SiPostman,
   SiTypescript,
   SiMongodb,
-  SiFigma,
   SiAxios,
 } from "react-icons/si";
 
@@ -76,7 +75,7 @@ export const technologies: TechCategory[] = [
         iconColor: "text-[#0ea5e9]",
       },
       { name: "Redux", icon: SiRedux, iconColor: "text-[#764abc]" },
-      { name: "Bootstrap", icon: FaBootstrap, iconColor: "text-[#764abc]" }, // Fixed spelling anomaly
+      { name: "Bootstrap", icon: FaBootstrap, iconColor: "text-[#764abc]" }, 
     ],
   },
   {
@@ -95,7 +94,6 @@ export const technologies: TechCategory[] = [
     techs: [
       { name: "Git", icon: FaGitAlt, iconColor: "text-[#f05032]" },
       { name: "GitHub", icon: FaGithub, iconColor: "text-foreground" },
-      { name: "Figma", icon: SiFigma, iconColor: "text-[#f24e1e]" },
       { name: "Postman", icon: SiPostman, iconColor: "text-[#ef5b25]" },
       { name: "Axios", icon: SiAxios, iconColor: "text-[#5a29e4]" },
     ],

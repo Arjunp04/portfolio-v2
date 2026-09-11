@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { FaRegPaperPlane } from "react-icons/fa6";
 import { MdOutlineEmail, MdArrowOutward } from "react-icons/md";
@@ -18,16 +19,27 @@ const Contact = () => {
   const mailtoUrl = `mailto:${emailAddress}?subject=${emailSubject}&body=${emailBody}`;
 
   return (
-    <section
-      id="contact"
-      className="flex items-center pb-4"
-    >
-      <div className="bg-surface border border-foreground-muted/15 rounded-lg p-5 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 w-full">
+    <section id="contact" className="flex items-center pb-4">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.97, y: 20 }}
+        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="bg-surface border border-foreground-muted/15 rounded-lg p-5 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 w-full"
+      >
         {/* Left Content */}
         <div className="flex items-center gap-6">
-          <div className="rounded-full ring ring-accent/50 p-3 flex items-center justify-center shrink-0 text-accent shadow">
+          <motion.div
+            animate={{ y: [0, -6, 0] }}
+            transition={{
+              duration: 2.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="rounded-full ring ring-accent/50 p-3 flex items-center justify-center shrink-0 text-accent shadow"
+          >
             <FaRegPaperPlane size={32} />
-          </div>
+          </motion.div>
 
           <div>
             <p className="text-foreground font-semibold text-lg">
@@ -44,28 +56,37 @@ const Contact = () => {
 
         {/* Contact Buttons */}
         <div className="flex flex-wrap gap-3 shrink-0 font-medium">
-          <a
+          <motion.a
             href="https://www.linkedin.com/in/arjun-prajapati-4ba91b285/"
             target="_blank"
             rel="noopener noreferrer"
+            whileHover={{ scale: 1.04, y: -2 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="flex items-center gap-2 border border-foreground-muted/20 rounded-md px-5 py-2 text-sm text-foreground bg-surface hover:bg-background transition-colors"
           >
             <FaLinkedinIn size={18} />
             LinkedIn
-          </a>
+          </motion.a>
 
-          <a
+          <motion.a
             href="https://github.com/Arjunp04/"
             target="_blank"
             rel="noopener noreferrer"
+            whileHover={{ scale: 1.04, y: -2 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="flex items-center gap-2 border border-foreground-muted/20 rounded-md px-5 py-2 text-sm text-foreground bg-surface hover:bg-background transition-colors"
           >
             <FaGithub size={18} />
             GitHub
-          </a>
+          </motion.a>
 
-          <a
+          <motion.a
             href={mailtoUrl}
+            whileHover={{ scale: 1.04, y: -2 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="group flex items-center gap-2 bg-accent hover:bg-accent-hover text-white rounded px-5 py-2 text-sm transition-colors"
           >
             <MdOutlineEmail size={20} />
@@ -74,9 +95,9 @@ const Contact = () => {
               size={16}
               className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             />
-          </a>
+          </motion.a>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
