@@ -2,7 +2,7 @@
 
 My personal portfolio, built to showcase my projects and experience as a Frontend Developer.
 
-🔗 **Live site:** https://arjun-prajapati.vercel.app/
+🔗 **Live site:** https://arjunprajapati.vercel.app/
 
 ## Tech Stack
 - Next.js (App Router)
