@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://arjun-prajapati.vercel.app/"),
+  metadataBase: new URL("https://arjunprajapati.vercel.app/"),
   title: {
     default: "Arjun Prajapati | Frontend Developer",
     template: "%s | Arjun Prajapati",
@@ -33,26 +33,17 @@ export const metadata: Metadata = {
   authors: [{ name: "Arjun Prajapati" }],
   openGraph: {
     type: "website",
-    url: "https://arjun-prajapati.vercel.app/",
+    url: "https://arjunprajapati.vercel.app/",
     title: "Arjun Prajapati | Frontend Developer",
     description:
       "Frontend Developer building responsive, scalable web applications with React, Next.js and modern web technologies.",
     siteName: "Arjun Prajapati Portfolio",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Arjun Prajapati - Frontend Developer",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Arjun Prajapati | Frontend Developer",
     description:
       "Frontend Developer building responsive, scalable web applications with React, Next.js and modern web technologies.",
-    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -65,7 +56,7 @@ const personJsonLd = {
   "@type": "Person",
   name: "Arjun Prajapati",
   jobTitle: "Frontend Developer",
-  url: "https://arjun-prajapati.vercel.app/",
+  url: "https://arjunprajapati.vercel.app/",
   sameAs: [
     "https://github.com/Arjunp04/",
     "https://www.linkedin.com/in/arjun-prajapati-4ba91b285/",

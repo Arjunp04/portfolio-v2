@@ -4,7 +4,7 @@ import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 import { BsDownload } from "react-icons/bs";
-import profileImage from "../assets/profile.jpg";
+import profileImage from "../assets/profile.png";
 
 const containerVariants: Variants = {
   hidden: {},

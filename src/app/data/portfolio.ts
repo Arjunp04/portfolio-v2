@@ -35,13 +35,11 @@ export const stats = [
   { icon: "Layers", value: "8+", label: "Technologies" },
   { icon: "Briefcase", value: "2", label: "Professional Roles" },
 ];
-
 export interface Tech {
   name: string;
   icon: React.ComponentType<{ className?: string }>;
   iconColor: string; // Dynamic icon color strictly for light/dark blending
 }
-
 export interface TechCategory {
   id: string;
   category: string;
@@ -75,7 +73,7 @@ export const technologies: TechCategory[] = [
         iconColor: "text-[#0ea5e9]",
       },
       { name: "Redux", icon: SiRedux, iconColor: "text-[#764abc]" },
-      { name: "Bootstrap", icon: FaBootstrap, iconColor: "text-[#764abc]" }, 
+      { name: "Bootstrap", icon: FaBootstrap, iconColor: "text-[#764abc]" },
     ],
   },
   {
@@ -85,7 +83,6 @@ export const technologies: TechCategory[] = [
       { name: "Node.js", icon: FaNodeJs, iconColor: "text-[#339933]" },
       { name: "Express.js", icon: SiExpress, iconColor: "text-foreground" },
       { name: "MongoDB", icon: SiMongodb, iconColor: "text-[#4db33d]" },
-
     ],
   },
   {
